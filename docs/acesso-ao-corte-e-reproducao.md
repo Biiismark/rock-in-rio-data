@@ -38,6 +38,13 @@ python rock-in-rio-data/scripts/verificar_manifesto_snapshot.py \
 
 O verificador usa apenas a biblioteca padrão do Python. Ele confere os 138 caminhos, tamanhos e Git blob SHAs registrados.
 
+## Metadados originais do corte
+
+- [Manifesto JSON](../data/congelamento/manifesto_congelamento.json)
+- [Estado das fontes](../data/congelamento/estado_fontes_cutoff.csv)
+- [Regras metodológicas congeladas](../data/congelamento/regras_metodologicas.txt)
+- [Resumo dos checkpoints](../data/congelamento/checkpoints_d0_d1_d3_d7.csv)
+
 ## O que é possível reproduzir
 
 O conjunto não está ausente: ele pode ser baixado e inspecionado pelo commit público fixado. Isso permite conferir as tabelas de dados e os resultados resumidos sem depender da cópia operacional atual no Supabase. Os workflows e scripts do mesmo repositório também estão vinculados àquele estado. A integridade dos arquivos pode ser testada pelo comando acima.

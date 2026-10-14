@@ -43,6 +43,10 @@ O artigo associado avalia o ferramental e sua operação. Os indicadores de arti
 - [Inventário factual das contagens do congelamento](data/inventario-congelamento-2026-09-28.csv)
 - [Acesso ao corte público e limites da reprodução](docs/acesso-ao-corte-e-reproducao.md)
 - [Manifesto dos 138 arquivos de dados no commit congelado](data/manifesto-dados-publicos-freeze-1.0.csv)
+- [Metadados originais do congelamento: manifesto JSON](data/congelamento/manifesto_congelamento.json)
+- [Status das fontes no cutoff](data/congelamento/estado_fontes_cutoff.csv)
+- [Dados resumidos dos checkpoints D0–D+7](data/congelamento/checkpoints_d0_d1_d3_d7.csv)
+- [Verificador de integridade do snapshot](scripts/verificar_manifesto_snapshot.py)
 - [Dados e código no commit imutável do repositório de origem](https://github.com/Biiismark/rock-in-rio-2026/tree/f508aaa78631ecddbedcb4bd117c0b1041b2c17c/dados)
 
 ## Evidência complementar de 13/10

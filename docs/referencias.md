@@ -19,7 +19,7 @@ As sete referências abaixo compõem o núcleo teórico/técnico registrado para
 - Daikeler, J., et al. (2025). Assessing data quality in the age of digital social research: A systematic review. *Social Science Computer Review, 43*(5), 943–979. https://doi.org/10.1177/08944393241245395
 - Eichenauer, V. Z., et al. (2022). Obtaining consistent time series from Google Trends. *Economic Inquiry, 60*(2), 694–705. https://doi.org/10.1111/ecin.13049
 - Gregor, S., & Hevner, A. R. (2013). Positioning and presenting design science research for maximum impact. *MIS Quarterly, 37*(2), 337–355. https://doi.org/10.25300/MISQ/2013/37.2.01
-- Martens, C. D. P., Pedron, C. D., & Oliveira, J. C. (2021). Diretrizes para elaboração de artigos tecnológicos, artigos aplicados ou relatos técnicos de produção com ênfase profissional. *Revista Inovação, Projetos e Tecnologias, 9*(2), 143–147. https://doi.org/10.5585/10.5585/iptec.v9i2.21117
+- Martens, C. D. P., Pedron, C. D., & Oliveira, J. C. (2021). Diretrizes para elaboração de artigos tecnológicos, artigos aplicados ou relatos técnicos de produção com ênfase profissional. *Revista Inovação, Projetos e Tecnologias, 9*(2), 143–147. https://doi.org/10.5585/iptec.v9i2.21117
 - Moutinho, J. A., Fernandes, G., & Rabechini, R., Jr. (2024). Evaluation in design science. *Evaluation and Program Planning, 102*, 102366. https://doi.org/10.1016/j.evalprogplan.2023.102366
 - Ohme, J., et al. (2024). Digital trace data collection for social media effects research. *Communication Methods and Measures, 18*(2), 124–141. https://doi.org/10.1080/19312458.2023.2181319
 - Rovetta, A. (2021). Reliability of Google Trends. *Frontiers in Research Metrics and Analytics, 6*, 670226. https://doi.org/10.3389/frma.2021.670226

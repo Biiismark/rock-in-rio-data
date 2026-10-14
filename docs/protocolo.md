@@ -39,8 +39,8 @@ O script e workflow de correção da fase 08–10/09 foram confirmados posterior
 
 A avaliação disponível foi documental e estrutural. O freeze registra Actions #40 bem-sucedida em 27/09 e status de integridade OK para as fontes auditadas. A auditoria pós-automação de 26/09 registrou 73/73 arquivos e 28/28 snapshots sincronizados, sem erro no teste correspondente.
 
-Não foram localizados teste formal de usabilidade, medição de disponibilidade/tempo de resposta do site, avaliação com participantes nem reprodução independente do congelamento a partir deste repositório público.
+Não foram localizados teste formal de usabilidade, medição de disponibilidade/tempo de resposta do site nem avaliação com participantes. Os dados e o código do congelamento estão publicamente acessíveis no commit `f508aaa78631ecddbedcb4bd117c0b1041b2c17c`; a reprodução independente de todas as tabelas do manuscrito ainda não foi realizada.
 
 ## Limites
 
-Os resultados são limitados pela latência e cobertura distintas das fontes, pela censura de rankings, pela normalização/possível reamostragem do Trends, pela lacuna Spotify 26–27/08 ainda não auditada e pela divergência sobre persistência de related queries. A documentação pública resume a evidência, mas os dados integrais do freeze não estão distribuídos neste repositório.
+Os resultados são limitados pela latência e cobertura distintas das fontes, pela censura de rankings, pela normalização/possível reamostragem do Trends, pela lacuna Spotify 26–27/08 ainda não auditada e pela divergência sobre persistência de related queries V2. O corte e o código estão distribuídos no commit público `f508aaa78631ecddbedcb4bd117c0b1041b2c17c`; a reprodução independente dos resultados do manuscrito continua pendente.

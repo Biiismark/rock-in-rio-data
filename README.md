@@ -30,6 +30,7 @@ O artigo associado avalia o ferramental e sua operação. Os indicadores de arti
 
 ## Evidências e registros
 
+- [Relatório oficial de auditoria do congelamento (PDF)](docs/evidencias/Relatorio_Final_Auditoria_Congelamento_Rock_in_Rio_2026_2026-09-28.pdf)
 - [Resultados e avaliação do artefato](docs/resultados-e-avaliacao.md)
 - [Trilha de evidências e lacunas de rastreabilidade](docs/auditoria-de-evidencias.md)
 - [Registro dos relatórios diários, incidentes e divergências](docs/relatorios-de-evidencia.md)

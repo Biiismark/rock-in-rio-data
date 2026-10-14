@@ -67,4 +67,4 @@ Este catálogo identifica o código publicado que compõe o observatório. Os ar
 
 ## Execução auditada
 
-O freeze registra Actions #40 concluída com sucesso em 27/09/2026. A auditoria de 26/09 registra execução pós-automação #39 e reconciliação de 73/73 arquivos e 28/28 snapshots sem erro naquele teste. O código publicado não contém credenciais. As tabelas e os snapshots necessários para repetir todas as execuções não acompanham o repositório.
+O freeze registra Actions #40 concluída com sucesso em 27/09/2026. A auditoria de 26/09 registra execução pós-automação #39 e reconciliação de 73/73 arquivos e 28/28 snapshots sem erro naquele teste. O código publicado não contém credenciais. O código e os dados versionados estão acessíveis no repositório operacional no commit `f508aaa78631ecddbedcb4bd117c0b1041b2c17c`; o manifesto do dossiê indexa os 138 arquivos sob `dados/`.

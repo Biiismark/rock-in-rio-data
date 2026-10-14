@@ -46,7 +46,7 @@ Os relatórios dizem que Analytics foi instrumentado prospectivamente em 09/09. 
 
 Os registros sustentam a descrição do observatório implementado, das fontes integradas, das rotinas automatizadas, dos controles de estado e maturação, dos incidentes observados, das respostas de código e das contagens do corte congelado. Eles não sustentam inferência causal de impacto do festival nos artistas, eficácia estatística do backoff, recuperação confirmada da lacuna Spotify ou validação de usabilidade da interface.
 
-O conjunto de dados completo, os relatórios originais e os snapshots não estão neste repositório. Assim, esta síntese permite auditar o que foi relatado e identificar divergências, mas ainda não reproduzir independentemente todos os totais do artigo.
+O corte de dados está acessível no repositório operacional fixado em `f508aaa78631ecddbedcb4bd117c0b1041b2c17c`, com manifesto dos arquivos neste dossiê. Os relatórios originais permanecem no Drive. O acesso aos dados está resolvido; ainda não foi feita reprodução independente, comando a comando, de todos os totais do artigo.
 
 ## Referência deste registro
 

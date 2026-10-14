@@ -41,6 +41,9 @@ O artigo associado avalia o ferramental e sua operação. Os indicadores de arti
 - [Catálogo do código que compõe o artefato](docs/catalogo-codigo.md)
 - [Referências mobilizadas no manuscrito](docs/referencias.md)
 - [Inventário factual das contagens do congelamento](data/inventario-congelamento-2026-09-28.csv)
+- [Acesso ao corte público e limites da reprodução](docs/acesso-ao-corte-e-reproducao.md)
+- [Manifesto dos 138 arquivos de dados no commit congelado](data/manifesto-dados-publicos-freeze-1.0.csv)
+- [Dados e código no commit imutável do repositório de origem](https://github.com/Biiismark/rock-in-rio-2026/tree/f508aaa78631ecddbedcb4bd117c0b1041b2c17c/dados)
 
 ## Evidência complementar de 13/10
 
@@ -48,9 +51,11 @@ O checkpoint chamado D+30 não contém uma fotografia completa em D+30. Em 13/10
 
 ## Acesso aos dados e limite atual de reprodução
 
-O repositório disponibiliza documentação e código de trabalho, mas **não contém o conjunto de dados congelado, os snapshots brutos nem um pacote completo de fixtures executáveis**. Os registros originais permanecem no Drive/Supabase do projeto; sua distribuição pública depende de revisar termos das fontes. Portanto, a versão atual permite inspecionar o desenho, o código e os resultados resumidos, mas ainda não permite reproduzir todas as tabelas do artigo independentemente.
+O conjunto congelado está publicamente acessível no repositório de origem, no commit de dados `f508aaa78631ecddbedcb4bd117c0b1041b2c17c`. Esse corte contém 138 arquivos em `dados/` (28.035.375 bytes). O [manifesto do corte](data/manifesto-dados-publicos-freeze-1.0.csv) registra caminhos, tamanhos, Git blob SHAs e links imutáveis. A pasta não foi duplicada neste dossiê para evitar cópias divergentes; o acesso e a forma de reproduzir estão descritos em [Acesso ao corte público e limites da reprodução](docs/acesso-ao-corte-e-reproducao.md).
 
-O estado do código e da documentação é público. Nenhuma licença de reutilização foi atribuída ainda a código/documentação próprios; conteúdos de terceiros continuam sujeitos aos seus termos. Isso é acesso para avaliação, não uma concessão implícita de licença para redistribuição.
+O conjunto de dados e o código do corte podem ser inspecionados e usados para conferir os resultados. Ainda não foi executada uma reprodução independente, comando a comando, de todas as tabelas finais do manuscrito; portanto, não afirmamos que essa validação já foi concluída. Coletas externas também dependem da disponibilidade e dos termos das fontes.
+
+O estado do código e da documentação é público, mas ainda não foi declarada licença de reutilização para os materiais próprios; dados e conteúdo de terceiros permanecem sujeitos aos termos das fontes. A publicação permite acesso para avaliação, sem conceder automaticamente direitos amplos de redistribuição.
 
 ## Âncoras de versão
 

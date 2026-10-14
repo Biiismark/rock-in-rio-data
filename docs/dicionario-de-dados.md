@@ -1,6 +1,6 @@
 # Dicionário de dados — esquema do projeto
 
-Esquemas abaixo foram verificados nas tabelas `public` do Supabase em 14/10/2026. As contagens são fotografia operacional dessa consulta; onde anotado, não correspondem ao freeze. Os esquemas não incluem o conteúdo dos snapshots privados.
+Esquemas abaixo foram verificados nas tabelas `public` do Supabase em 14/10/2026. As contagens são fotografia operacional dessa consulta; onde anotado, não correspondem ao freeze. As tabelas operacionais atuais são distintas dos CSVs públicos do corte fixado no repositório de origem.
 
 ## Google Trends V2
 

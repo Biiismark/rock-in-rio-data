@@ -9,6 +9,7 @@ O pacote público de avaliação usa o conjunto de dados já versionado no repos
 - Commit de dados de referência: [`f508aaa78631ecddbedcb4bd117c0b1041b2c17c`](https://github.com/Biiismark/rock-in-rio-2026/commit/f508aaa78631ecddbedcb4bd117c0b1041b2c17c)
 - Commit que registra o cutoff: [`73fe7639ddfc654a16333c15d9fd785937b9b4fa`](https://github.com/Biiismark/rock-in-rio-2026/commit/73fe7639ddfc654a16333c15d9fd785937b9b4fa)
 - [Pasta `dados/` no corte imutável](https://github.com/Biiismark/rock-in-rio-2026/tree/f508aaa78631ecddbedcb4bd117c0b1041b2c17c/dados)
+- [Relatório oficial do congelamento em PDF](evidencias/Relatorio_Final_Auditoria_Congelamento_Rock_in_Rio_2026_2026-09-28.pdf)
 - [Arquivo compactado do commit](https://github.com/Biiismark/rock-in-rio-2026/archive/f508aaa78631ecddbedcb4bd117c0b1041b2c17c.zip)
 
 O commit de cutoff contém **138 arquivos** sob `dados/`, totalizando **28.035.375 bytes**: tabelas tratadas, registros de auditoria, metodologia, referências e relatórios versionados. Os arquivos permanecem no repositório de origem; este dossiê não cria uma segunda cópia divergente.

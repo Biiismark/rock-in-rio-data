@@ -9,7 +9,7 @@ As sete referências abaixo compõem o núcleo teórico/técnico registrado para
 3. Hochheimer, C. J., Bosma, G. N., Gunn-Sandell, L., & Sammel, M. D. (2024). Reproducible research practices: A tool for effective and efficient leadership in collaborative statistics. *Stat, 13*(1), e653. https://doi.org/10.1002/sta4.653 — documentação e reprodutibilidade.
 4. Peffers, K., Tuunanen, T., Rothenberger, M. A., & Chatterjee, S. (2007). A design science research methodology for information systems research. *Journal of Management Information Systems, 24*(3), 45–77. https://doi.org/10.2753/MIS0742-1222240302 — construção, demonstração e avaliação do artefato.
 5. Hevner, A. R., March, S. T., Park, J., & Ram, S. (2004). Design science in information systems research. *MIS Quarterly, 28*(1), 75–105. https://doi.org/10.2307/25148625 — relevância e rigor na pesquisa de artefatos.
-6. Mitchell, R. (2019). *Web scraping com Python: coletando mais dados da web moderna* (2. ed.). Novatec. https://novatec.com.br/livros/web-scraping-com-python-2ed/ — referência técnica sobre requisição e parsing; confirmar que esta edição foi a efetivamente consultada.
+6. Mitchell, R. (2019). *Web scraping com Python: coletando mais dados da web moderna* (2. ed.). Novatec. https://novatec.com.br/livros/web-scraping-com-python-2ed/ — referência técnica diretamente relacionada às rotinas de extração; a edição bibliográfica deve ser conferida com o exemplar recebido/consultado antes da submissão.
 7. Wilkinson, M. D., et al. (2016). The FAIR Guiding Principles for scientific data management and stewardship. *Scientific Data, 3*, 160018. https://doi.org/10.1038/sdata.2016.18 — encontrabilidade, acesso, interoperabilidade e reuso.
 
 ## Referências adicionais citadas
@@ -26,6 +26,6 @@ As sete referências abaixo compõem o núcleo teórico/técnico registrado para
 - Wang, R. Y., & Strong, D. M. (1996). Beyond accuracy: What data quality means to data consumers. *Journal of Management Information Systems, 12*(4), 5–33. https://doi.org/10.1080/07421222.1996.11518099
 - Weigand, H., & Johannesson, P. (2023). How to identify your design science research artifact. In *2023 IEEE 25th Conference on Business Informatics* (pp. 1–10). https://doi.org/10.1109/CBI58679.2023.10187511
 
-## Reconhecimento
+## Reconhecimento e livro recebido
 
-O prêmio de pesquisa do autor é informação biográfica/profissional, não base teórica nem evidência de validação do observatório. O livro de Mitchell é referência metodológica de scraping, independente do prêmio. Data, instituição/evento, coautoria e exemplar recebido devem ser confirmados pelo autor.
+O autor informou que recebeu um livro associado a um prêmio/reconhecimento profissional. O registro bibliográfico de Mitchell acima é pertinente às rotinas de scraping do projeto, mas a documentação disponível nesta auditoria não confirma que seja o exemplar concedido, nem identifica com segurança o nome do prêmio, instituição/evento ou data. Esses dados biográficos não são tratados como evidência de validação do observatório. A versão final do manuscrito deve incluir a edição efetivamente recebida/consultada e uma referência verificável do reconhecimento, sem atribuir detalhes não confirmados.

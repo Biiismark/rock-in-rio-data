@@ -27,6 +27,6 @@ No Supabase, a tabela `trends_v2_interesse` continuava com 8.040 linhas e 60 par
 
 ## Situação de distribuição
 
-Os dados brutos/snapshots do congelamento não acompanham o repositório público. A página pública inclui agregados, nomes de tabelas, datas de corte e código; a origem dos relatórios completos permanece no Drive de trabalho. Um commit de código não é hash dos CSVs e não substitui manifesto de dados. Nenhum SHA-256 dos arquivos científicos foi publicado nesta versão.
+Os arquivos tratados e snapshots versionados estão acessíveis no repositório operacional no commit de dados `f508aaa78631ecddbedcb4bd117c0b1041b2c17c`; este dossiê inclui um manifesto dos 138 arquivos com tamanho e Git blob SHA. Esse identificador Git não é SHA-256. Os relatórios integrais de trabalho permanecem no Drive; não são necessários para baixar o corte público, mas fundamentam a trilha de auditoria.
 
 Os termos de redistribuição das plataformas não foram comprovados para todos os arquivos; por isso não se publicaram HTML, capturas integrais, notícias, imagens nem dumps completos. O acesso às fontes originais permanece necessário para reexecutar coletas, sujeito à disponibilidade atual.

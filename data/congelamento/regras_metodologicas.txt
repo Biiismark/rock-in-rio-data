@@ -1,0 +1,11 @@
+CUTOFF CIENTÍFICO OFICIAL: 28/09/2026
+1. Universo: 28 artistas do Palco Mundo, 7 dias, 4 apresentações por dia.
+2. Checkpoints primários: D0, D+1, D+3 e D+7.
+3. Google Trends V2: conclusões finais usam somente observações consolidadas; provisórios permanecem rotulados.
+4. Baseline 2025 preservado sem reamostragem. Nova Twins 2025 permanece N/D.
+5. Ausência em rankings/listas monitoradas não equivale a zero.
+6. Rankings são listas censuradas.
+7. O desenho é observacional e não estabelece causalidade isolada.
+8. Dados posteriores ao cutoff não integram a base primária dos artigos.
+9. Snapshots anteriores não devem ser sobrescritos.
+10. Revisões tardias devem ser registradas como adendos.

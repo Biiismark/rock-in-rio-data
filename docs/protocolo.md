@@ -1,53 +1,46 @@
-# Protocolo resumido de coleta e tratamento
+# Protocolo executado no observatório
 
-## Finalidade do artefato
+## Desenho e objeto
 
-Construir um fluxo automatizado e auditável para observar sinais públicos relacionados ao Rock in Rio 2026, integrá-los por fonte e disponibilizar consultas/relatórios com limites explícitos. Este protocolo é do artigo ferramental. Não define inferência causal sobre o festival.
+O projeto foi um relato tecnológico aplicado e descritivo, orientado pela construção e avaliação de um artefato digital. O objeto avaliado foi o observatório em operação, composto por scripts, regras de tratamento, armazenamento, versionamento, automações, relatórios e interface. O estudo não foi desenhado para identificar efeito causal do festival.
 
-## Unidade, escopo e corte
+## Recorte realizado
 
-- Universo de configuração: 28 apresentações/artistas do Palco Mundo; mais entidades contextuais (evento e marca) apenas quando pertinentes à fonte.
-- Território: Brasil (Google Trends geo=BR; demais fontes conforme ranking nacional).
-- Janela principal: baseline pré-festival e observações em torno das apresentações, com checkpoints D0, D+1, D+3 e D+7.
-- Freeze científico: 28/09/2026, America/Sao_Paulo.
-- Atualizações posteriores: camada operacional/complementar; nunca sobrescreve silenciosamente o corte.
-- Google Trends V2: 30 entidades; série individual por Topic/MID, sem comparação de índice bruto entre entidades. Dados até 23/09 consolidados; 24–25/09 provisórios no freeze.
-- Dados ausentes, fora da lista, indisponíveis, provisórios e zeros da própria plataforma são categorias diferentes.
+- Evento e palco: Rock in Rio 2026, Palco Mundo.
+- Unidade de configuração: 28 artistas em sete datas, quatro apresentações por data.
+- Território das fontes nacionais: Brasil, conforme a cobertura própria de cada serviço.
+- Janela de observação: baseline pré-evento e observações ao redor dos shows; Google Trends usou checkpoints D0, D+1, D+3 e D+7.
+- Congelamento científico: RIR2026_FREEZE_1.0, corte 28/09/2026 às 16:32:48 BRT.
+- Observações posteriores foram mantidas na camada operacional/complementar. O relatório D+30 de 13/10 não atualizou o corte primário.
 
-## Três tempos
+## Fontes e dados observados
 
-Cada observação preserva (quando disponível) (1) data/hora do show ou evento, (2) data de referência/publicação da fonte, (3) timestamp da coleta e fuso. A classificação de D relativo usa a data de referência publicada pela fonte; o horário de execução não transforma dado atrasado em observação atual.
+O sistema reuniu programação oficial, Google Trends, Spotify Top 200 Brasil, charts nacionais, listas/históricos TikTok e corpus editorial da Heineken. Cada fonte foi mantida em sua unidade original. Índices de busca, posição de ranking, presença em lista, contagem de itens e publicação editorial não foram somados como se fossem a mesma métrica.
 
-## Fontes, coleta e periodicidade
+No corte de 28/09, o relatório registra 8.040 observações Trends para 30 entidades; 7.980 consolidadas até 23/09 e 60 provisórias de 24–25/09. O baseline de 2025 tinha 1.537 observações e 29 entidades; Nova Twins permaneceu N/D. Os quatro checkpoints definidos somaram 112/112 observações consolidadas.
 
-Consultar `fontes-e-proveniencia.md` e `dicionario-de-dados.md`. A periodicidade deve seguir o limite e a latência efetiva de cada serviço. Trends usa pausas de 65–85 s entre chamadas e 300 s após 429, com retentativa limitada. A chamada de related queries pode permanecer indisponível; não substitui a série principal de interesse.
+## Tratamento executado
 
-## Tratamento
+1. Os registros preservaram identificador e nome da entidade, termo/Topic consultado quando disponível, data efetiva e estado da fonte.
+2. Data do evento, data de referência da fonte e timestamp da coleta foram mantidos separados quando presentes.
+3. Ausência em lista foi interpretada como não detecção na lista consultada, não como zero de consumo.
+4. Ausência de baseline e falha de endpoint permaneceram estados explícitos; valores não foram imputados para preencher lacunas.
+5. Dados recentes sujeitos à maturação ficaram marcados como provisórios e foram separados dos consolidados.
+6. Correções posteriores e coletas após 28/09 foram mantidas fora do corte científico.
+7. Para Trends V2, as séries foram tratadas por entidade, com medidas intra-artista; o índice da plataforma não foi tratado como volume absoluto.
 
-1. Manter identificador estável da entidade e guardar nome/alias usado na consulta.
-2. Preservar dado de origem e metadados de coleta sempre que redistribuição/licença permitir; quando não permitir, publicar apenas esquema, agregados permitidos e instruções de reconsulta.
-3. Padronizar fuso para America/Sao_Paulo e manter timestamp original da fonte.
-4. Não preencher ausências com zero; aplicar status explícito.
-5. Deduplicar por chave composta documentada (fonte + entidade + data de referência + métrica + dimensão), guardar contagem/relatório de alteração.
-6. Separar dados recentes não maturados como provisórios.
-7. Calcular cobertura, min/max, chaves, duplicidades e estado de cada fonte antes de liberar snapshot.
-8. Congelar código e dados por commit/hash; correções tardias entram em adendo.
-9. Não somar contagens de listas diferentes como se fossem uma mesma métrica.
-10. Trends é índice relativo; ranking é presença censurada; TikTok é lista monitorada/circulação, não consumo total.
+## Evolução operacional relevante
 
-## Avaliação do artefato
+A auditoria de 03/09 registrou instabilidade no pipeline Trends legado, um HTTP 429 em consultas relacionadas e a regra de classificação indevida para 08–10/09. A documentação diária de 09/09 registra a V2 com coleta individual e metadados, além de 604 registros de related queries naquela saída. Código posterior aumentou o intervalo entre chamadas para 65–85 segundos e definiu espera de 300 segundos após 429. A tabela SQL de related queries estava vazia na leitura de 14/10, divergência ainda não reconciliada.
 
-Reportar denominadores e métodos para: cobertura prevista vs observada; execução bem-sucedida; falhas por fonte; retries; atraso/frescor; duplicidades; reconciliação GitHub/Supabase; consistência entre execução independente e saída; facilidade de reproduzir; utilidade para analista. Resultado do congelamento: 112/112 pontos primários de Trends D0/D+1/D+3/D+7 consolidados; Actions #40 sucesso (27/09); status de integridade registrado OK no freeze. A redução da taxa de HTTP 429 com os intervalos maiores ainda não foi quantificada.
+O script e workflow de correção da fase 08–10/09 foram confirmados posteriormente. A alteração da regra operacional não foi acompanhada por diff/contagem pública das linhas alteradas no snapshot.
 
-## Execução pública
+## Critérios e resultado da avaliação
 
-O pacote não fornece credenciais nem acesso ao Supabase de produção. Para reprodução:
-1. usar Python 3.12 e dependências especificadas em `requirements.txt` (arquivo mínimo a finalizar);
-2. obter dados novamente das fontes, respeitando termos e cotas atuais;
-3. configurar credenciais próprias somente como variáveis de ambiente, se optar por armazenamento Supabase;
-4. registrar timestamp, fuso, parâmetros, respostas de erro, versões e commit;
-5. executar validações e comparar manifests; não esperar respostas idênticas às de 2026, pois são dados dinâmicos.
+A avaliação disponível foi documental e estrutural. O freeze registra Actions #40 bem-sucedida em 27/09 e status de integridade OK para as fontes auditadas. A auditoria pós-automação de 26/09 registrou 73/73 arquivos e 28/28 snapshots sincronizados, sem erro no teste correspondente.
 
-## Privacidade e direitos
+Não foram localizados teste formal de usabilidade, medição de disponibilidade/tempo de resposta do site, avaliação com participantes nem reprodução independente do congelamento a partir deste repositório público.
 
-Não incluir conteúdo editorial integral, HTML, imagens, perfis pessoais, chaves, tokens, service-role keys ou export bruto de terceiros sem verificar direito de redistribuição. A fonte pública e o método devem ser citados; acesso aberto à página não concede licença para republicar seu conteúdo.
+## Limites
+
+Os resultados são limitados pela latência e cobertura distintas das fontes, pela censura de rankings, pela normalização/possível reamostragem do Trends, pela lacuna Spotify 26–27/08 ainda não auditada e pela divergência sobre persistência de related queries. A documentação pública resume a evidência, mas os dados integrais do freeze não estão distribuídos neste repositório.

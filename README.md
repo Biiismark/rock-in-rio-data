@@ -8,6 +8,8 @@ Pacote público complementar do artigo tecnológico submetido à Revista IPTEC. 
 - [Registro de falhas, correções e limitações](docs/falhas-e-solucoes.md)
 - [Protocolo de coleta e tratamento](docs/protocolo.md)
 - [Dicionário de dados](docs/dicionario-de-dados.md)
+- [Catálogo do código e scripts](docs/catalogo-codigo.md)
+- [Relatórios de evidência e síntese de auditoria](docs/relatorios-de-evidencia.md)
 - [Fontes e proveniência](docs/fontes-e-proveniencia.md)
 - [Referências teóricas e técnicas](docs/referencias.md)
 - [Código selecionado](scripts/)

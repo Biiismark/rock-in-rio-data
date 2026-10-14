@@ -23,8 +23,9 @@ Há três fatos distintos que precisam permanecer separados:
 1. A auditoria de 03/09 registra erro HTTP 429 em consultas relacionadas ocorrido em 28/08.
 2. O relatório diário de 09/09 relata 604 registros de consultas relacionadas na saída daquele dia.
 3. Na inspeção do Supabase em 14/10/2026, a tabela `trends_v2_consultas` continha zero linhas.
+4. No commit público do corte existe um arquivo legado `google_trends_rir_consultas_relacionadas.csv` com 157 linhas incluindo cabeçalho. Ele não é identificado como a tabela V2 e não reconcilia os 604 registros relatados.
 
-A divergência entre a saída histórica relatada e a persistência atual não foi reconciliada. Não é correto afirmar que a coleta nunca ocorreu, que os 604 registros foram recuperados com sucesso ou que o problema está resolvido. O inventário público registra ambos os estados.
+A persistência da saída V2 permanece não reconciliada. Não é correto afirmar que os 604 registros foram recuperados com sucesso nem que nunca existiram. O CSV legado demonstra apenas que outro arquivo de consultas relacionadas foi versionado.
 
 ### Aumento do intervalo entre chamadas e retentativa
 

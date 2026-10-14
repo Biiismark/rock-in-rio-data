@@ -6,7 +6,7 @@ O artigo associado avalia o ferramental e sua operação. Os indicadores de arti
 
 ## O que foi realizado
 
-- Configuração de 28 artistas em sete datas do Palco Mundo, quatro artistas por dia.
+- Configuração de 28 artistas em sete datas do Palco Mundo, quatro apresentações por dia.
 - Coleta e tratamento de séries de Google Trends V2, Spotify Top 200 Brasil, charts nacionais, listas e históricos TikTok, programação e corpus editorial da Heineken.
 - Código Python e workflows GitHub Actions; armazenamento em Supabase e arquivos versionados; interface web de consulta.
 - Protocolo com data do evento, data efetiva da fonte e timestamp de coleta separados; estados de observado, provisório, não detectado, N/D e indisponível preservados.
@@ -32,6 +32,7 @@ O artigo associado avalia o ferramental e sua operação. Os indicadores de arti
 
 - [Resultados e avaliação do artefato](docs/resultados-e-avaliacao.md)
 - [Trilha de evidências e lacunas de rastreabilidade](docs/auditoria-de-evidencias.md)
+- [Registro dos relatórios diários, incidentes e divergências](docs/relatorios-de-evidencia.md)
 - [Matriz técnica de questionamentos](docs/matriz-tecnica.md)
 - [Registro de falhas realmente observadas e respostas implementadas](docs/falhas-e-solucoes.md)
 - [Protocolo executado no projeto](docs/protocolo.md)
@@ -39,11 +40,11 @@ O artigo associado avalia o ferramental e sua operação. Os indicadores de arti
 - [Fontes, datas efetivas e proveniência](docs/fontes-e-proveniencia.md)
 - [Catálogo do código que compõe o artefato](docs/catalogo-codigo.md)
 - [Referências mobilizadas no manuscrito](docs/referencias.md)
-- [Inventário de dados do congelamento](data/inventario-congelamento-2026-09-28.csv)
+- [Inventário factual das contagens do congelamento](data/inventario-congelamento-2026-09-28.csv)
 
 ## Evidência complementar de 13/10
 
-O checkpoint chamado D+30 não contém uma fotografia completa em D+30. Em 13/10, Trends chegava apenas a 25/09 (consolidado até 23/09), Spotify a 11/10 (D+28), charts e TikTok a 12/10 (D+29), e Heineken a 09/10. Essa atualização é complementar e não altera o congelamento primário.
+O checkpoint chamado D+30 não contém uma fotografia completa em D+30. Em 13/10, Trends chegava a 25/09 (consolidado até 23/09), Spotify a 11/10 (D+28), charts e TikTok a 12/10 (D+29), e Heineken a 09/10. Essa atualização é complementar e não altera o congelamento primário.
 
 ## Acesso aos dados e limite atual de reprodução
 

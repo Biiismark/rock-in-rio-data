@@ -19,6 +19,6 @@ Este registro reúne ocorrências encontradas na operação e nas auditorias do 
 
 ## Resposta técnica que o projeto efetivamente demonstra
 
-O projeto passou a preservar indisponibilidade como erro, ausência em lista como não detecção, maturação como provisório e baseline ausente como N/D. As pausas maiores e backoff foram implementados para gerir quota, mas o efeito quantitativo não foi testado. O código e o workflow corrigem a regra de fase, porém o impacto no snapshot não foi contado. O Spotify ainda exige conferência de 26–27/08. A persistência das 604 related queries reportadas em 09/09 diverge do banco vazio consultado em 14/10.
+O projeto passou a preservar indisponibilidade como erro, ausência em lista como não detecção, maturação como provisório e baseline ausente como N/D. As pausas maiores e backoff foram implementados para gerir quota, mas o efeito quantitativo não foi testado. O código e o workflow corrigem a regra de fase, porém o impacto no snapshot não foi contado. O Spotify ainda exige conferência de 26–27/08. A persistência dos 604 registros V2 relatados em 09/09 não foi reconciliada com a tabela Supabase vazia consultada em 14/10; o CSV legado de 157 linhas no commit público é outro artefato e não resolve essa divergência.
 
 Não se inclui uma lista genérica de falhas hipotéticas: este documento registra eventos observados ou limites explicitamente verificados no projeto.

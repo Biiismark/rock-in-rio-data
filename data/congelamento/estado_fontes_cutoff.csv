@@ -1,0 +1,13 @@
+camada,contagem_estado,frescor,status
+Programação oficial,28 apresentações/artistas; 7 dias; 4 por dia,04-13/09,OK
+Google Trends V2,"8.040 linhas; 7.980 consolidadas; 60 provisórias; 30 entidades",consolidado até 23/09; provisório 24-25/09,CONGELADO COM PROVISÓRIOS ROTULADOS
+Baseline Trends 2025,1.537 linhas; 29 entidades com baseline,2025,PRESERVADO; Nova Twins = N/D
+Checkpoints Trends,D0/D+1/D+3/D+7: 28 artistas em cada marco; 112/112 consolidadas,até D+7,COMPLETO
+Charts Brasil,24 métricas de presença no snapshot de integridade,ref. 27/09,OK; lista censurada
+Spotify diário,5.800 linhas,24/08-25/09,OK; latência observada
+TikTok lineup,28 monitorados; 0 detectados no snapshot,KWORB 27/09; Trending 25/09,NÃO DETECTADO ≠ ZERO
+TikTok KWORB,2.592 linhas,01-27/09,OK
+TikTok rankings,1.150 linhas,27/08-25/09,OK
+TikTok histórico,621 linhas,28/07-27/09,OK
+Heineken editorial,117 publicações,última editorial 16/09,ESTÁVEL
+GitHub Actions,run #40 concluído com sucesso,27/09,OK

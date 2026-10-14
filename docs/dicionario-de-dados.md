@@ -39,4 +39,4 @@ Esquemas abaixo foram verificados nas tabelas `public` do Supabase em 14/10/2026
 
 As chaves listadas são as declaradas no schema consultado. Campos nullable podem estar vazios porque a fonte não os forneceu ou porque a etapa não se aplicou. Nulo, ausência de linha, não detecção, N/D e indisponibilidade não são estados equivalentes.
 
-`trends_v2_bootstrap_files` continha metadados de um arquivo `google_trends_v2_status.csv` (hash e tamanho) atualizado em 10/09/2026. O conteúdo codificado não é reproduzido. Não foi localizado manifesto SHA-256 público dos CSVs científicos do freeze.
+`trends_v2_bootstrap_files` continha metadados de um arquivo `google_trends_v2_status.csv` (hash e tamanho) atualizado em 10/09/2026. O conteúdo codificado não é reproduzido. O [manifesto público do corte](../data/manifesto-dados-publicos-freeze-1.0.csv) registra Git blob SHAs e tamanhos para os 138 arquivos; esses identificadores Git não são SHA-256.

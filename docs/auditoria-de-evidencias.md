@@ -24,7 +24,7 @@ Este registro liga afirmações sobre o projeto aos artefatos que as sustentam. 
 | Fase 08–10/09 | Auditoria de 03/09 identifica regra incorreta; script corretivo e workflow foram confirmados no código posterior. | Ainda não foi anexado diff/contagem de linhas do snapshot científico. | Correção operacional confirmada; impacto histórico quantificado não confirmado. |
 | Analytics do site | Em 08/09 não havia série validada; instrumentação implantada prospectivamente em 09/09. | O material consultado não apresenta série de uso validada no freeze. | Não retroestimar acessos nem alegar avaliação de usabilidade. |
 | D+30 | Relatório de 13/10 informa últimos dados anteriores ao marco em várias fontes. | Nenhuma cobertura integral das fontes em 13/10; Trends termina em D+21 relativo. | Chamar de checkpoint D+30 complementar, não de coleta completa D+30. |
-| Dados e reprodução pública | Código e documentação publicados. | O conjunto de dados congelado e snapshots não estão incluídos neste repositório. | O pacote atual permite avaliar documentação/código e resultados resumidos; não reproduzir integralmente os resultados sem acesso aos dados. |
+| Dados e reprodução pública | O commit imutável `f508aaa78631ecddbedcb4bd117c0b1041b2c17c` do repositório operacional contém 138 arquivos em `dados/`; o dossiê agora publica manifesto com links e Git blob SHAs. | Os arquivos estão no repositório companheiro e não foram duplicados neste dossiê. A reprodução independente de todas as tabelas do manuscrito ainda não foi executada. | O corte pode ser baixado e auditado publicamente; conferir acesso e limites em `docs/acesso-ao-corte-e-reproducao.md`. |
 
 ## Materiais consultados
 
@@ -35,4 +35,4 @@ Este registro liga afirmações sobre o projeto aos artefatos que as sustentam. 
 - `Acompanhamento_Complementar_D30_Rock_in_Rio_2026` — 13/10/2026.
 - Supabase `rock-in-rio-2026`, tabelas públicas consultadas em leitura somente de metadados/contagens — 14/10/2026.
 
-Os registros originais são documentos de trabalho no Drive do autor e não estão vinculados publicamente. A versão pública deste dossiê contém as sínteses e as lacunas identificadas; o autor deve conservar os arquivos de origem e fornecer acesso ao parecerista se solicitado e permitido.
+Os relatórios originais permanecem no Drive do autor. Os dados tratados e arquivos de auditoria do corte são públicos no repositório operacional fixado em `f508aaa78631ecddbedcb4bd117c0b1041b2c17c`; o manifesto deste dossiê aponta para cada arquivo. Os relatórios de origem do Drive continuam sendo registros de trabalho não republicados aqui.

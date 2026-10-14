@@ -23,9 +23,24 @@ Arquivos centrais do artigo ferramental incluem, entre outros:
 - Spotify: `dados/tratados/spotify_historico_brasil.csv`, `spotify_rir_faixas_diario.csv` e arquivos de catálogo/créditos.
 - Charts, TikTok, programação, auditorias e corpus editorial Heineken: caminhos e identificadores estão no manifesto.
 
+## Verificação do corte
+
+Para validar a integridade do checkout contra o manifesto:
+
+```bash
+git clone https://github.com/Biiismark/rock-in-rio-2026.git
+git -C rock-in-rio-2026 checkout f508aaa78631ecddbedcb4bd117c0b1041b2c17c
+git clone https://github.com/Biiismark/rock-in-rio-data.git
+python rock-in-rio-data/scripts/verificar_manifesto_snapshot.py \
+  --root rock-in-rio-2026 \
+  --manifest rock-in-rio-data/data/manifesto-dados-publicos-freeze-1.0.csv
+```
+
+O verificador usa apenas a biblioteca padrão do Python. Ele confere os 138 caminhos, tamanhos e Git blob SHAs registrados.
+
 ## O que é possível reproduzir
 
-O conjunto não está ausente: ele pode ser baixado e inspecionado pelo commit público fixado. Isso permite conferir as tabelas de dados e os resultados resumidos sem depender da cópia operacional atual no Supabase. Os workflows e scripts do mesmo repositório também estão vinculados àquele estado.
+O conjunto não está ausente: ele pode ser baixado e inspecionado pelo commit público fixado. Isso permite conferir as tabelas de dados e os resultados resumidos sem depender da cópia operacional atual no Supabase. Os workflows e scripts do mesmo repositório também estão vinculados àquele estado. A integridade dos arquivos pode ser testada pelo comando acima.
 
 A coleta original em si depende de sites externos, disponibilidade das fontes, cotas e, em algumas rotinas, configuração local. Nenhuma credencial é publicada. Reexecutar uma coleta hoje não recria automaticamente o estado histórico de 28/09; a reprodução do corte deve usar os arquivos desse commit, sem trocar para a branch `main`.
 

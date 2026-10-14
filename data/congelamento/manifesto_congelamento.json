@@ -1,0 +1,26 @@
+{
+  "versao": "RIR2026_FREEZE_1.0",
+  "cutoff_oficial": "2026-09-28 16:32:48 -03:00",
+  "repositorio": "Biiismark/rock-in-rio-2026",
+  "commit_dados_referencia": "f508aaa78631ecddbedcb4bd117c0b1041b2c17c",
+  "commit_documentacao_cutoff": "73fe7639ddfc654a16333c15d9fd785937b9b4fa",
+  "escopo": {
+    "artistas": 28,
+    "dias": 7,
+    "apresentacoes_por_dia": 4,
+    "checkpoints": ["D0", "D+1", "D+3", "D+7"]
+  },
+  "trends_v2": {
+    "total": 8040,
+    "consolidadas": 7980,
+    "provisorias": 60,
+    "entidades": 30
+  },
+  "baseline_2025": {
+    "linhas": 1537,
+    "entidades_com_baseline": 29,
+    "nova_twins": "N/D",
+    "reamostrado_no_cutoff": false
+  },
+  "nota": "Atualizações operacionais posteriores não integram a base primária dos artigos."
+}

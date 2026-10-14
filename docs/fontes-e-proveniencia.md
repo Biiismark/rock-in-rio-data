@@ -1,34 +1,32 @@
-# Inventário de fontes e proveniência
+# Fontes utilizadas e proveniência registrada
 
-## Fontes observadas
+## Fontes efetivamente integradas
 
-| Fonte | O que fornece no projeto | Regra de interpretação | Frescor no freeze 28/09/2026 | Redistribuição |
-|---|---|---|---|---|
-| Google Trends V2 | Série de interesse por entidade/Topic no Brasil; baseline 2025 quando validado | Índice normalizado; comparar trajetória da própria entidade; preservar N/D e provisórios | Consolidado até 23/09; 24–25/09 provisórios | Reconsultar origem; não afirmar que índice é volume absoluto |
-| Spotify Charts Brasil | Presença e streams das faixas que entram no Top 200 | Ranking censurado; ausência não é zero nem consumo total | 25/09 | Verificar termos/API/licença antes de republicar snapshots |
-| Charts nacionais | Posição/presença por fonte (Apple Music, iTunes, Deezer, Shazam etc.) | Manter identidade de cada chart; não somar cegamente | Snapshot de integridade até 27/09 | Conteúdo/frequência sujeito a termos dos serviços |
-| TikTok / KWORB / TrendingTikTokSongs | Posições/listas e histórico disponível em cada subfonte | Lista monitorada/circulação; ausência não significa zero vídeos ou visualizações | KWORB/histórico 27/09; TrendingTikTokSongs 25/09 | Verificar termos de cada site; não republicar HTML ou mídia |
-| Programação oficial do Rock in Rio | Datas/palcos/lineup e chave de amostra | Validar lineup e manter changelog | 28 apresentações; 7 dias; 4 por dia | Citar página oficial e data de acesso |
-| Corpus editorial Heineken | Metadados de cobertura editorial e classificações de tópico | Fora da pergunta principal; manter proveniência e deduplicação | 117 registros editoriais, última publicação 16/09 | Não republicar texto integral nem imagens sem autorização |
-| Google Analytics / uso da plataforma | Métricas prospectivas de acesso após instrumentação | Não reconstruir retrospectivamente 08/09 | Instrumentação prospectiva desde 09/09 segundo relatório | Dados agregados e privacidade conforme configuração |
+| Fonte/camada | Objeto coletado no projeto | Corte científico de 28/09 | Limite observado |
+|---|---|---|---|
+| Programação oficial do Rock in Rio | Lineup e datas do Palco Mundo | 28 artistas/apresentações configurados; 7 dias, 4 por dia | Define o recorte; alterações de programação requerem versão separada. |
+| Google Trends V2 | Interesse de busca por entidade; baseline e distribuição regional em saídas separadas | 8.040 linhas/30 entidades; consolidadas até 23/09, parciais até 25/09; baseline 1.537/29 entidades | Índice normalizado, não volume absoluto; 60 linhas recentes provisórias. |
+| Spotify Top 200 Brasil | Presença e streams de faixas listadas; agregação por artista a partir de faixas mapeadas | 5.800 linhas, data efetiva até 25/09 | Só cobre faixas que aparecem no Top 200; auditoria havia apontado 26–27/08 ausentes. |
+| Charts nacionais (Apple Music, iTunes, Deezer, Shazam e outras capturadas) | Presença e posição por chart | 24 métricas no snapshot de integridade, referência até 27/09 | Listas e profundidades diferentes; posição não equivale a audiência. |
+| TikTok/KWORB/TrendingTikTokSongs | Listas atuais e histórico disponível por subfonte | KWORB 2.592 linhas; rankings 1.150; histórico 621; últimas datas variam entre 25 e 27/09 | Fonte/lista monitorada não cobre toda circulação TikTok. |
+| Corpus editorial Heineken/Google Notícias | Metadados, data de publicação, veículo e classificação temática | 117 publicações; última publicação registrada em 16/09 | Corpus auxiliar; não mede impacto musical e não autoriza republicar matéria integral. |
+| Analytics da interface | Eventos de navegação da SPA adicionados ao site | Instrumentação prospectiva desde 09/09; sem série de uso validada no freeze consultado | Não havia base para estimar acessos de 08/09 retrospectivamente. |
 
-## Linhagem
+## Linhagem efetivamente documentada
 
-1. **Coleta:** workflows/scripts versionados executam por fonte; log deve guardar versão, timestamp/fuso, parâmetros, erros e tentativa.
-2. **Tratamento:** IDs, status, datas, deduplicação e estado de maturação são aplicados por regras específicas e documentadas.
-3. **Armazenamento:** Supabase guarda tabelas operacionais; GitHub guarda código, documentação, snapshots/metadados permitidos e relatórios de integridade.
-4. **Relato diário:** monitora execução, frescor e resultados; é trilha de auditoria, não substitui os dados de origem.
-5. **Congelamento:** corte principal em 28/09/2026, commit de dados citado no relatório como `f508aaa78631ecddbedcb4bd117c0b1041b2c17c`; alterações posteriores são complementares.
-6. **Pacote público:** esta versão exclui dados brutos e conteúdos protegidos enquanto não houver verificação documental de direitos. O manifest público deve incluir SHA-256 dos arquivos redistribuídos e referência ao commit final do pacote.
+1. Scripts de coleta e tratamento estão versionados em GitHub; workflows Actions executam etapas automatizadas.
+2. Tabelas operacionais e arquivos foram mantidos em Supabase; arquivos e documentos de execução também aparecem no histórico do projeto.
+3. Relatórios diários registram horários, datas efetivas, frescor, estados de maturação, alterações de método e exceções.
+4. O relatório de congelamento referencia o commit de dados `f508aaa78631ecddbedcb4bd117c0b1041b2c17c` e o commit de documentação do cutoff `73fe7639ddfc654a16333c15d9fd785937b9b4fa`.
+5. O congelamento científico é 28/09/2026 16:32:48 BRT, versão RIR2026_FREEZE_1.0.
+6. O checkpoint D+30 de 13/10 é posterior e incompleto por fonte; permanece suplementar.
 
-## Relatórios diários examinados
+## Estado posterior consultado em 14/10/2026
 
-Foram considerados o diário metodológico no repositório de desenvolvimento; auditoria Supabase/baseline de 03/09; relatórios interpretativos com ressalvas de Trends legado e instrumentação Analytics; auditorias pós-festival de 23–26/09; relatório de congelamento de 28/09; e checkpoint complementar D+30 de 13/10. As datas efetivas variam por fonte; o D+30 não é um snapshot completo D+30 e não altera o freeze.
+No Supabase, a tabela `trends_v2_interesse` continuava com 8.040 linhas e 60 parciais; `trends_v2_baseline_2025`, 1.537 linhas; `trends_v2_consultas`, zero linhas; `trends_v2_regioes`, 789 linhas. As tabelas TikTok em operação haviam crescido a 4.128 linhas KWORB, 1.847 rankings e 1.729 históricas, com data efetiva até 13/10. Esses números posteriores não são contagens do freeze.
 
-## Pendências de proveniência
+## Situação de distribuição
 
-- Confirmar lacuna/backfill de Spotify em 26–27/08 com teste de presença diária no snapshot, não com contagem agregada.
-- Gerar hashes SHA-256 e publicar o manifest final dos arquivos redistribuídos.
-- Definir política de licença para código e dados próprios.
-- Inserir as URLs exatas e datas de acesso para cada página/API consultada.
-- Verificar termos de republicação por fonte antes de adicionar qualquer dado bruto ao diretório `data/`.
+Os dados brutos/snapshots do congelamento não acompanham o repositório público. A página pública inclui agregados, nomes de tabelas, datas de corte e código; a origem dos relatórios completos permanece no Drive de trabalho. Um commit de código não é hash dos CSVs e não substitui manifesto de dados. Nenhum SHA-256 dos arquivos científicos foi publicado nesta versão.
+
+Os termos de redistribuição das plataformas não foram comprovados para todos os arquivos; por isso não se publicaram HTML, capturas integrais, notícias, imagens nem dumps completos. O acesso às fontes originais permanece necessário para reexecutar coletas, sujeito à disponibilidade atual.

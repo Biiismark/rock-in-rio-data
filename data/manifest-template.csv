@@ -1,0 +1,3 @@
+# Public-data manifest template
+# Fill one row per file released after rights review. Never place credentials or raw HTML/media here.
+path,description,source,reference_period,collection_period,timezone,transformation,license_or_terms,sha256,status

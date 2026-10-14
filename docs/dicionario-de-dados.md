@@ -1,45 +1,42 @@
-# Dicionário de dados e esquemas
+# Dicionário de dados — esquema do projeto
 
-Este dicionário registra esquemas vistos no código e nas tabelas/arquivos de saída. O esquema varia por fonte. Antes da submissão, gere o dicionário exato dos arquivos congelados e associe-o ao commit e a um manifesto SHA-256. Os nomes abaixo não substituem essa conferência.
-
-## Convenções
-- Data da fonte (data, data_ranking, data_publicacao) é distinta do timestamp da coleta (coletado_em/data_coleta).
-- Google Trends é índice relativo/normalizado, não volume absoluto.
-- Ausente em lista é nao_detectado, nunca zero de consumo. N/D, indisponível, não coletado e provisório permanecem distintos.
-- Nulo não deve ser convertido automaticamente em zero. O projeto usa America/Sao_Paulo.
+Esquemas abaixo foram verificados nas tabelas `public` do Supabase em 14/10/2026. As contagens são fotografia operacional dessa consulta; onde anotado, não correspondem ao freeze. Os esquemas não incluem o conteúdo dos snapshots privados.
 
 ## Google Trends V2
-Tabela trends_v2_interesse: artista_id, nome_artista, entidade, tipo_entidade, data_show, data, d_relativo, interesse, percentil_intra_artista, zscore_intra_artista, media_2026_intra, mediana_2026_intra, modo_busca, chave_google, periodo, is_partial, status_dado, data_validada_ate, metodologia.
 
-Metadados trends_v2_entidades: artista_id, nome_artista, entidade, entidade_id, tipo_entidade, consulta_original, aliases, data_show, chave_google, titulo_google, tipo_topic_google, modo_busca, status_2026, status_baseline_2025, data_validada_ate, biblioteca_principal, fallback, related_topics_status, resolvido_em. Termo consultado, tópico selecionado e status baseline são dimensões distintas.
+| Tabela | Linhas em 14/10 | Chave primária | Colunas e tipos observados |
+|---|---:|---|---|
+| `trends_v2_interesse` | 8.040 | `artista_id, data` | `artista_id:text; nome_artista:text; entidade:text; tipo_entidade:text; data_show:date; data:date; d_relativo:integer; interesse:numeric; percentil_intra_artista:numeric; zscore_intra_artista:numeric; media_2026_intra:numeric; mediana_2026_intra:numeric; modo_busca:text; chave_google:text; periodo:text; is_partial:boolean; status_dado:text; data_validada_ate:date; metodologia:text; atualizado_em:timestamptz` |
+| `trends_v2_baseline_2025` | 1.537 | `artista_id, data` | `artista_id:text; nome_artista:text; entidade:text; tipo_entidade:text; data_show:date; data:date; interesse:numeric; modo_busca:text; chave_google:text; periodo:text; status_baseline:text; metodologia:text; atualizado_em:timestamptz` |
+| `trends_v2_entidades` | 30 | `artista_id` | `artista_id:text; nome_artista:text; entidade:text; entidade_id:integer; tipo_entidade:text; consulta_original:text; aliases:text; data_show:date; chave_google:text; titulo_google:text; tipo_topic_google:text; modo_busca:text; status_2026:text; status_baseline_2025:text; data_validada_ate:date; biblioteca_principal:text; fallback:text; related_topics_status:text; resolvido_em:timestamptz; atualizado_em:timestamptz` |
+| `trends_v2_consultas` | 0 | `artista_id, consulta_relacionada, tipo_consulta` | `artista_id:text; nome_artista:text; entidade:text; consulta_relacionada:text; valor_google:numeric; tipo_consulta:text; indicador_movimento:text; explodiu:boolean; valor_exibicao:text; periodo_dias:text; tipo_relacao:text; modo_busca:text; data_validada_ate:date; metodologia:text; atualizado_em:timestamptz` |
+| `trends_v2_regioes` | 789 | `artista_id, estado` | `artista_id:text; nome_artista:text; entidade:text; estado:text; geo_code:text; indice_estado_termo:numeric; modo_busca:text; data_validada_ate:date; metodologia:text; atualizado_em:timestamptz` |
+| `trends_v2_resumo` | 30 | `artista_id` | `artista_id:text; nome_artista:text; entidade:text; tipo_entidade:text; modo_busca:text; chave_google:text; interesse_atual:numeric; percentil_atual:numeric; zscore_atual:numeric; media_interesse:numeric; mediana_2026:numeric; pico_interesse:numeric; data_pico:date; pontos_temporais:integer; n_2025:integer; status_baseline_2025:text; data_atual:date; data_validada_ate:date; status_dado:text; nota_metodologica:text; atualizado_em:timestamptz` |
+| `trends_v2_status` | 1 | `versao` | `versao:text; gerado_em:date; data_validada_ate:date; entidades_2026:integer; entidades_baseline_2025:integer; provisorio_disponivel_ate:date; related_topics:text; regra_comparacao:text; fonte:text; atualizado_em:timestamptz` |
 
-Baseline CSV: artista_id, nome_artista, entidade, tipo_entidade, data_show, data, interesse, modo_busca, chave_google, periodo, status_baseline, metodologia.
+## TikTok
 
-Sumário CSV: ranking_atencao_relativa, ranking_interesse_busca, artista_id, nome_artista, termo, tipo_entidade, modo_busca, chave_google, interesse_atual, percentil_atual, zscore_atual, media_interesse, mediana_2026, pico_interesse, data_pico, pontos_temporais, n_2025, status_baseline_2025, data_atual, data_validada_ate, status_dado, nota_metodologica.
+| Tabela | Linhas em 14/10 | Chave primária | Colunas e tipos observados |
+|---|---:|---|---|
+| `tiktok_kworb` | 4.128 | `data_ranking, posicao` | `data_ranking:date; data_execucao:date; plataforma:text; fonte:text; tipo_ranking:text; pais:text; posicao:integer; variacao:text; artista:text; artista_normalizado:text; musica:text` |
+| `tiktok_rankings` | 1.847 | `data_ranking, tipo_ranking, posicao` | `data_ranking:date; data_execucao:date; plataforma:text; fonte:text; tipo_ranking:text; pais:text; posicao:integer; artista:text; artista_normalizado:text; musica:text; videos_tiktok:bigint; url_som:text` |
+| `tiktok_historico` | 1.729 | `data, url_som` | `data:date; artista:text; musica:text; rank:integer; novos_videos_tiktok:bigint; videos_tiktok_acumulados:bigint; url_som:text; origem_historico:text; data_execucao:date; primeira_aparicao:date; ultima_aparicao:date; pico_data:date; pico_posicao:integer; dias_no_chart:integer` |
+| `tiktok_resumo_sons` | 150 | `url_som` | `url_som:text; artista:text; musica:text; videos_tiktok_atual:bigint; uso_7d:bigint; variacao_7d_pct:numeric; rank_7d_texto:text; pico_posicao:integer; pico_data:date; sequencia_atual_dias:integer; dias_no_chart:integer; primeira_aparicao:date; ultima_aparicao:date; paises:integer; datas_visiveis_extraidas:integer; datas_embutidas_extraidas:integer; datas_iso_candidatas_html:integer` |
+| `tiktok_auditoria_historico` | 9 | `url_som` | `url_som:text; musica:text; datas_extraidas:integer; dias_no_chart_resumo:integer; primeira_aparicao:date; ultima_aparicao:date; min_data_extraida:date; max_data_extraida:date` |
 
-Status CSV: versao, gerado_em, data_validada_ate, entidades_2026, entidades_baseline_2025, provisorio_disponivel_ate, related_topics, regra_comparacao, fonte.
+## Campos centrais e interpretação
 
-## Spotify, presença e charts
-spotify_artistas_diario.csv: data_ranking, artista_id, nome_artista, nome_normalizado, nome_spotify_esperado, spotify_artista_id, spotify_nome_artista, presente_top_200, quantidade_faixas, faixas_como_principal, faixas_como_participacao, melhor_posicao, streams_faixas_rankeadas, streams_7_dias_faixas_rankeadas. Cobertura limitada ao Top 200 e às faixas capturadas; não representa toda atividade do artista.
-
-evolucao_presenca_rir.csv: data_referencia, tipo_data, artista_id, nome_artista, plataforma, tipo_item, periodicidade, titulo, posicao, movimento_posicao, valor, tipo_valor, fonte, origem_registro, prioridade_fonte, data_plataforma_confirmada, url_fonte, titulo_normalizado, titulo_comparacao, registro_id, tamanho_ranking, score_posicao, percentual_ranking_superado, faixa_score, elegivel_evolucao_diaria. Posição requer lista/tamanho; elegibilidade é variável derivada.
-
-## TikTok e notícias
-tiktok_rir_artistas.csv: data_ranking, fonte, tipo_ranking, artista_id, nome_artista, encontrado, ocorrencias_artista_fonte, posicao, musica, artista_fonte, criterio_match. Subfontes têm frescor desigual; ausência na lista consultada não significa ausência total na plataforma.
-
-noticias_heineken_rir_publicacoes.csv: noticia_id, titulo, titulo_normalizado, veiculo, data_publicacao, data_publicacao_original, link, termo_consultado, categoria_consulta, assunto, relacao_rock_in_rio, data_coleta, coletado_em, url_rss, primeira_coleta, ultima_coleta, quantidade_coletas, url_original_google, url_final, status_decodificacao, erro_decodificacao, status_acesso, status_http, lead_noticia, origem_lead, arquivo_html_pagina, erro_acesso, categoria_validada, status_validacao, criterio_validacao, incluir_dashboard, nivel_confianca, status_processamento, validado_em, data, pauta_id. Por padrão, não redistribuir textos/HTML integrais.
-
-Spotify/Kworb: scripts gravam ranking e créditos separados, com data, lista, posição/movimento, IDs e nomes, métricas publicadas, URL e timestamp. Confirmar cabeçalhos no CSV congelado antes de citar versão específica.
-
-## Estados, chaves e trilha
-| Estado | Significado |
+| Campo | Significado no projeto |
 |---|---|
-| observado | resposta recebida e validada |
-| provisorio | resposta recente sujeita a maturação |
-| nao_detectado | entidade ausente da lista consultada |
-| indisponivel | fonte/endpoint falhou, por exemplo HTTP 429 |
-| nao_coletado | tarefa não executada ou período não coberto |
-| n_d | valor não disponível/válido segundo método ou fonte |
-| zero_valido | zero explícito retornado pela fonte |
+| `data_show` | Data da apresentação usada para alinhar a série ao evento. |
+| `data` / `data_ranking` | Data representada pela série ou ranking, distinta do horário de coleta. |
+| `d_relativo` | Distância em dias à apresentação, calculada pela regra do projeto. |
+| `interesse` | Índice relativo do Google Trends; não é contagem de buscas. |
+| `percentil_intra_artista`, `zscore_intra_artista` | Transformações calculadas dentro da série do próprio artista. |
+| `is_partial`, `status_dado` | Estado de parcialidade/validação; 60 linhas recentes do freeze estão marcadas provisórias. |
+| Posição/presença em ranking | Aparecer ou não numa lista delimitada; ausência é não detecção, não consumo zero. |
+| `data_execucao` | Data operacional da coleta; não substitui `data_ranking`. |
 
-Chave lógica recomendada: fonte + ID da entidade + data de referência + métrica + lista/dimensão + versão do tratamento. Logs devem ter chave própria e registrar lote, tentativa, status HTTP, latência, timestamp e versão do código.
+As chaves listadas são as declaradas no schema consultado. Campos nullable podem estar vazios porque a fonte não os forneceu ou porque a etapa não se aplicou. Nulo, ausência de linha, não detecção, N/D e indisponibilidade não são estados equivalentes.
+
+`trends_v2_bootstrap_files` continha metadados de um arquivo `google_trends_v2_status.csv` (hash e tamanho) atualizado em 10/09/2026. O conteúdo codificado não é reproduzido. Não foi localizado manifesto SHA-256 público dos CSVs científicos do freeze.

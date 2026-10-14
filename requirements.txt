@@ -1,0 +1,6 @@
+# Environment used in the development repository (Python 3.12).
+# Full pinned set retained here for the collection pipeline; revalidate before reruns.
+pandas==3.0.5
+python-dotenv==1.2.3
+supabase==2.31.0
+trendspy==0.1.6
